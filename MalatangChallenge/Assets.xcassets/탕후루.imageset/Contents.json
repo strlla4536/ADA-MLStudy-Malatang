@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "탕후루.png",
+      "filename" : "탕후루.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "탕후루 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "탕후루 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
