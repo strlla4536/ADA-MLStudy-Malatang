@@ -86,3 +86,4 @@ Carthage/Build/
 
 # macOS 시스템 파일
 .DS_Store
+MalatangChallenge.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
