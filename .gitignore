@@ -86,4 +86,9 @@ Carthage/Build/
 
 # macOS 시스템 파일
 .DS_Store
+<<<<<<< HEAD
 MalatangChallenge.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/UserInterfaceState.xcuserstate
+=======
+
+echo "xcuserdata/*.xcuserstate" >> .gitignore
+>>>>>>> main
