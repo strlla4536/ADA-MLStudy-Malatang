@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct LoadingView: View {
-    var body: some View {
+  @State private var imageIndex = 0
+  @State private var navigateToReadyView = false
+  private let timer = Timer.publish(every: 0.5, on: .main, in: .common).autoconnect()
+  private let images = ["마라탕", "탕후루"]
+  
+  var body: some View {
+    
       ZStack{
         Color.black
           .ignoresSafeArea(.all)
@@ -39,16 +45,29 @@ struct LoadingView: View {
           Text("Tip:\n루시드의 동작을 완벽하게 따라할수록 점수가 올라요!")
             .font(.custom("DNFBitBitv2", size: 15))
             .foregroundStyle(Color(red: 255/255, green: 245/255, blue: 157/255))
-            
+          
         }
         
-        Image("마라탕")
+        Image(images[imageIndex])
           .resizable()
           .frame(width: 100, height: 100)
-        }
+          .onReceive(timer) { _ in
+            imageIndex = (imageIndex + 1) % 2 // 0.5초마다 이미지 변경되도록
+          }
+      }
+    
+    .onAppear {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        navigateToReadyView = true
+      }
     }
+    .navigationBarBackButtonHidden(true)
+    .navigationDestination(isPresented: $navigateToReadyView) {
+      ReadyView()
+    }
+  }
 }
 
 #Preview {
-    LoadingView()
+  LoadingView()
 }

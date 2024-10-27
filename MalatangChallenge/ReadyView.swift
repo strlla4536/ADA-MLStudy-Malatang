@@ -10,6 +10,7 @@ import SwiftUI
 struct ReadyView: View {
   @State private var count = 3
   @State private var isActive = false
+  
   var body: some View {
     ZStack {
       Image("background")
@@ -26,12 +27,19 @@ struct ReadyView: View {
             }
         } else {
           Text("Start!")
+            .onAppear {
+              DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                isActive = true
+              }
+            }
         }
       }
       .font(.custom("DNFBitBitv2", size: 90))
-      .fullScreenCover(isPresented: $isActive) {
-        DancingView()
-      }
+    }
+    
+    .navigationBarBackButtonHidden(true)
+    .fullScreenCover(isPresented: $isActive) {
+      DancingView()
     }
   }
   
@@ -42,7 +50,6 @@ struct ReadyView: View {
       } else {
         count = 0
         timer.invalidate()
-        isActive = true
       }
     }
   }
