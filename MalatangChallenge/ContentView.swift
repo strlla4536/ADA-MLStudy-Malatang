@@ -13,21 +13,28 @@ struct ContentView: View {
       Image("mainImg")
         .resizable()
         .scaledToFill()
-        .frame(width: 393, height: 900)
+        .ignoresSafeArea(.all)
       
-      Spacer()
-      
-      ZStack(alignment: .center){
-        Rectangle()
-          .foregroundColor(Color(red: 0.98, green: 0.78, blue: 0.78))
-          .frame(width: 240, height: 83.91608)
-          .cornerRadius(167.83217)
-        
-        Text("START")
-          .font(.custom("DNFBitBitv2", size: 30))
+      Button {
+//      LoadingView()
+      } label: {
+        VStack {
+          Spacer()
+          ZStack(alignment: .center){
+            Rectangle()
+              .foregroundColor(Color(red: 0.98, green: 0.78, blue: 0.78))
+              .frame(width: 240, height: 83.91608)
+              .cornerRadius(167.83217)
+            
+            Text("START")
+              .font(.custom("DNFBitBitv2", size: 30))
+              .foregroundStyle(Color.black)
+          }
+          .padding(.bottom, 307)
+        }
       }
-      .padding(.bottom, 307)
-      .border(.blue)
+
+      
       
     }
   }
