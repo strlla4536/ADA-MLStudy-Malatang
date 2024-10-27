@@ -8,17 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
+  var body: some View {
+    ZStack{
+      Image("mainImg")
+        .resizable()
+        .scaledToFill()
+        .ignoresSafeArea(.all)
+      
+      Button {
+//      LoadingView()
+      } label: {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+          Spacer()
+          ZStack(alignment: .center){
+            Rectangle()
+              .foregroundColor(Color(red: 0.98, green: 0.78, blue: 0.78))
+              .frame(width: 240, height: 83.91608)
+              .cornerRadius(167.83217)
+            
+            Text("START")
+              .font(.custom("DNFBitBitv2", size: 30))
+              .foregroundStyle(Color.black)
+          }
+          .padding(.bottom, 307)
         }
-        .padding()
+      }
+
+      
+      
     }
+  }
 }
 
 #Preview {
-    ContentView()
+  ContentView()
 }
