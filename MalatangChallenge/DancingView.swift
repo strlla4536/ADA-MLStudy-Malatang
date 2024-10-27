@@ -75,7 +75,7 @@ struct CameraView: UIViewRepresentable {
     
 #else
     // 실제 기기에서 실행되면 카메라 세팅
-    guard let camera = AVCaptureDevice.default(for: .video),
+    guard let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front),
           let input = try? AVCaptureDeviceInput(device: camera) else {
       return view
     }
