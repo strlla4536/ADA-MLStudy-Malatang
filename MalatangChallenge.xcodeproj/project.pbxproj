@@ -24,27 +24,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6430E2DD2CD089E4009737A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64513D6B2CCE0AA700F25C1B /* MalatangChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MalatangChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64513D7B2CCE0AA800F25C1B /* MalatangChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MalatangChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64513D852CCE0AA800F25C1B /* MalatangChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MalatangChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		640641EE2CCE7E70005E8FA3 /* Exceptions for "MalatangChallenge" folder in "MalatangChallenge" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 64513D6A2CCE0AA700F25C1B /* MalatangChallenge */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		64513D6D2CCE0AA700F25C1B /* MalatangChallenge */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				640641EE2CCE7E70005E8FA3 /* Exceptions for "MalatangChallenge" folder in "MalatangChallenge" target */,
-			);
 			path = MalatangChallenge;
 			sourceTree = "<group>";
 		};
@@ -88,6 +76,7 @@
 		64513D622CCE0AA700F25C1B = {
 			isa = PBXGroup;
 			children = (
+				6430E2DD2CD089E4009737A4 /* Info.plist */,
 				64513D6D2CCE0AA700F25C1B /* MalatangChallenge */,
 				64513D7E2CCE0AA800F25C1B /* MalatangChallengeTests */,
 				64513D882CCE0AA800F25C1B /* MalatangChallengeUITests */,
@@ -412,7 +401,7 @@
 				DEVELOPMENT_TEAM = GT56H2MYWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MalatangChallenge/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -442,7 +431,7 @@
 				DEVELOPMENT_TEAM = GT56H2MYWV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MalatangChallenge/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
