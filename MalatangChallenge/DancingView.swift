@@ -20,7 +20,8 @@ struct DancingView: View {
     }()
     
     @State private var navigateToResultView = false
-    @State private var score: Int = 60 // 임의의 점수, ML 모델 연동 후 수정 필요
+    @State private var score: Int = 0
+       private let modelManager = MLModelManager()
 
     var body: some View {
         ZStack {
