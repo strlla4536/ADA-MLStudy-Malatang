@@ -53,5 +53,6 @@ class MLModelManager {
 
         let averageConfidence = confidences.reduce(0, +) / Float(confidences.count)
         return Int(averageConfidence * 100)
+
     }
 }
