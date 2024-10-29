@@ -10,38 +10,51 @@ import AVKit
 import AVFoundation
 
 struct DancingView: View {
-  private let player: AVPlayer = {
-    if let filePath = Bundle.main.path(forResource: "IMG_5179", ofType: "MOV") {
-      let fileURL = URL(fileURLWithPath: filePath)
-      return AVPlayer(url: fileURL)
-    } else {
-      fatalError("동영상을 찾을 수 없습니다.")
-    }
-  } ()
-  
-  var body: some View {
-    ZStack {
-      VideoPlayer(player: player)
-        .ignoresSafeArea(.all)
-        .onAppear{
-          player.play() //DancingView로 전환되면 자동으로 영상 재생
+    private let player: AVPlayer = {
+        if let filePath = Bundle.main.path(forResource: "Main", ofType: "mp4") {
+            let fileURL = URL(fileURLWithPath: filePath)
+            return AVPlayer(url: fileURL)
+        } else {
+            fatalError("동영상을 찾을 수 없습니다.")
         }
-      
-      VStack {
-        HStack {
-          CameraView()
-            .frame(width: 120, height: 213.33)
-            .background(Color.gray) // 배경 추가하여 카메라 뷰 가시성 높이기
-            .padding(.top, 30)
-          
-          Spacer()
-          
+    }()
+    
+    @State private var navigateToResultView = false
+    @State private var score: Int = 60 // 임의의 점수, ML 모델 연동 후 수정 필요
+
+    var body: some View {
+        ZStack {
+            VideoPlayer(player: player)
+                .ignoresSafeArea(.all)
+                .onAppear {
+                    player.play()
+                    addPlayerEndObserver()
+                }
+            
+            VStack {
+                HStack {
+                    CameraView()
+                        .frame(width: 120, height: 213.33)
+                        .background(Color.gray)
+                        .padding(.top, 30)
+                    
+                    Spacer()
+                }
+                .padding(.leading, 10)
+                Spacer()
+            }
         }
-        .padding(.leading, 10)
-        Spacer()
-      }
+        .fullScreenCover(isPresented: $navigateToResultView) {
+            ResultView(score: score)
+        }
     }
-  }
+    
+    private func addPlayerEndObserver() {
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: .main) { _ in
+            score = 60 // 임의의 점수 설정, 추후 수정 필요
+            navigateToResultView = true
+        }
+    }
 }
 
 
